@@ -20,6 +20,7 @@
             color: #2d2d2d;
             min-height: 100vh;
             padding: 20px;
+            transition: background 0.3s ease;
         }
 
         .container {
@@ -29,15 +30,23 @@
 
         header {
             text-align: center;
-            margin-bottom: 40px;
-            padding-top: 30px;
+            margin-bottom: 30px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            text-align: center;
+            flex: 1;
         }
 
         h1 {
             font-size: 28px;
             font-weight: 700;
             color: #5a6e8f;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             text-transform: lowercase;
             letter-spacing: 1px;
         }
@@ -48,6 +57,50 @@
             font-weight: 400;
             text-transform: lowercase;
             letter-spacing: 0.5px;
+        }
+
+        .settings-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 12px 16px;
+            box-shadow: 0 2px 8px rgba(90, 110, 143, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            flex: 0 0 auto;
+        }
+
+        .settings-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #5a6e8f;
+            text-transform: lowercase;
+            letter-spacing: 0.5px;
+        }
+
+        .bg-options {
+            display: flex;
+            gap: 8px;
+        }
+
+        .bg-btn {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .bg-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .bg-btn.active {
+            border-color: #5a6e8f;
+            box-shadow: 0 0 8px rgba(90, 110, 143, 0.3);
         }
 
         .main-layout {
@@ -62,7 +115,7 @@
             border-radius: 12px;
             padding: 28px;
             box-shadow: 0 2px 12px rgba(90, 110, 143, 0.08);
-            border-top: 3px solid #7eb3d4;
+            border-top: 3px solid #9db3d4;
         }
 
         .form-group {
@@ -105,16 +158,16 @@
         }
 
         .mood-btn:hover {
-            border-color: #7eb3d4;
-            color: #7eb3d4;
+            border-color: #9db3d4;
+            color: #9db3d4;
             background: #f5f9fc;
         }
 
         .mood-btn.active {
-            border-color: #7eb3d4;
+            border-color: #9db3d4;
             background: linear-gradient(135deg, #e8f2f8 0%, #d8e8f3 100%);
-            color: #6a9fb8;
-            box-shadow: 0 2px 8px rgba(126, 179, 212, 0.2);
+            color: #7a9fb0;
+            box-shadow: 0 2px 8px rgba(157, 179, 212, 0.2);
         }
 
         textarea {
@@ -137,7 +190,7 @@
 
         textarea:focus {
             outline: none;
-            border-color: #7eb3d4;
+            border-color: #9db3d4;
             background: #fafbfc;
         }
 
@@ -154,13 +207,13 @@
 
         .date-input:focus {
             outline: none;
-            border-color: #7eb3d4;
+            border-color: #9db3d4;
         }
 
         .btn-save {
             width: 100%;
             padding: 12px;
-            background: linear-gradient(135deg, #7eb3d4 0%, #6a9fb8 100%);
+            background: linear-gradient(135deg, #9db3d4 0%, #7a9fb0 100%);
             color: white;
             border: none;
             border-radius: 6px;
@@ -174,7 +227,7 @@
 
         .btn-save:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 14px rgba(126, 179, 212, 0.35);
+            box-shadow: 0 4px 14px rgba(157, 179, 212, 0.35);
         }
 
         .btn-save:active {
@@ -217,14 +270,14 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 11px;
-            color: #7eb3d4;
+            color: #9db3d4;
             font-weight: 600;
             transition: all 0.2s ease;
         }
 
         .calendar-nav button:hover {
             background: #e8f2f8;
-            border-color: #7eb3d4;
+            border-color: #9db3d4;
         }
 
         .calendar-grid {
@@ -261,7 +314,7 @@
         }
 
         .calendar-day:hover {
-            border-color: #7eb3d4;
+            border-color: #9db3d4;
             background: #f0f8fb;
         }
 
@@ -272,7 +325,7 @@
 
         .calendar-day.has-mood {
             background: linear-gradient(135deg, #d8e8f3 0%, #e8f2f8 100%);
-            border-color: #7eb3d4;
+            border-color: #9db3d4;
             font-weight: 600;
         }
 
@@ -284,7 +337,7 @@
 
         .calendar-day-moods {
             font-size: 8px;
-            color: #7eb3d4;
+            color: #9db3d4;
             line-height: 1.2;
             margin-top: 2px;
             max-height: 20px;
@@ -309,7 +362,7 @@
             border-radius: 8px;
             padding: 16px;
             margin-bottom: 12px;
-            border-left: 3px solid #7eb3d4;
+            border-left: 3px solid #9db3d4;
             box-shadow: 0 2px 8px rgba(90, 110, 143, 0.06);
             transition: all 0.2s ease;
         }
@@ -343,7 +396,7 @@
         .mood-tag {
             display: inline-block;
             background: linear-gradient(135deg, #d8e8f3 0%, #e8f2f8 100%);
-            color: #6a9fb8;
+            color: #7a9fb0;
             padding: 4px 10px;
             border-radius: 12px;
             font-size: 11px;
@@ -402,7 +455,7 @@
             padding: 16px;
             text-align: center;
             box-shadow: 0 2px 8px rgba(90, 110, 143, 0.06);
-            border-top: 2px solid #7eb3d4;
+            border-top: 2px solid #9db3d4;
         }
 
         .stat-value {
@@ -457,7 +510,7 @@
 
         .distribution-fill {
             height: 100%;
-            background: linear-gradient(90deg, #7eb3d4 0%, #9db3d4 100%);
+            background: linear-gradient(90deg, #9db3d4 0%, #b5c5e0 100%);
             border-radius: 3px;
             transition: width 0.3s ease;
         }
@@ -469,7 +522,17 @@
             text-align: right;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
+            header {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .settings-panel {
+                width: 100%;
+                justify-content: center;
+            }
+
             .main-layout {
                 grid-template-columns: 1fr;
             }
@@ -477,11 +540,16 @@
 
         @media (max-width: 600px) {
             header {
-                margin-bottom: 30px;
+                margin-bottom: 20px;
             }
 
             h1 {
                 font-size: 24px;
+            }
+
+            .settings-panel {
+                padding: 10px 12px;
+                gap: 12px;
             }
 
             .mood-selector {
@@ -510,8 +578,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>moodlog</h1>
-            <p class="subtitle">track your mood, understand your patterns</p>
+            <div class="header-left">
+                <h1>moodlog</h1>
+                <p class="subtitle">track your mood, understand your patterns</p>
+            </div>
+            <div class="settings-panel">
+                <span class="settings-label">theme:</span>
+                <div class="bg-options" id="bgOptions"></div>
+            </div>
         </header>
 
         <div class="main-layout">
@@ -583,12 +657,55 @@
             'hopeful': 5, 
             'content': 5 
         };
+
+        const backgroundThemes = {
+            periwinkle: 'linear-gradient(135deg, #eef2f9 0%, #e8ecf5 100%)',
+            lavender: 'linear-gradient(135deg, #f5e8f8 0%, #ede1f3 100%)',
+            mint: 'linear-gradient(135deg, #e8f5f1 0%, #dff0eb 100%)',
+            peach: 'linear-gradient(135deg, #f9ede8 0%, #f3e1d8 100%)',
+            pale: 'linear-gradient(135deg, #f5f5f5 0%, #ececec 100%)'
+        };
+
         let selectedMoods = [];
         let currentCalendarDate = new Date();
+        let currentTheme = 'periwinkle';
 
-        // Initialize date input with today's date
+        // Initialize
+        initializeThemeSelector();
         const dateInput = document.getElementById('date');
         dateInput.valueAsDate = new Date();
+
+        function initializeThemeSelector() {
+            const bgOptions = document.getElementById('bgOptions');
+            const savedTheme = localStorage.getItem('moodlogTheme') || 'periwinkle';
+            currentTheme = savedTheme;
+
+            Object.keys(backgroundThemes).forEach(theme => {
+                const btn = document.createElement('button');
+                btn.className = 'bg-btn';
+                btn.style.background = backgroundThemes[theme];
+                if (theme === savedTheme) {
+                    btn.classList.add('active');
+                }
+                btn.addEventListener('click', () => setTheme(theme));
+                bgOptions.appendChild(btn);
+            });
+
+            applyTheme(savedTheme);
+        }
+
+        function setTheme(theme) {
+            currentTheme = theme;
+            localStorage.setItem('moodlogTheme', theme);
+            applyTheme(theme);
+
+            document.querySelectorAll('.bg-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        function applyTheme(theme) {
+            document.body.style.background = backgroundThemes[theme];
+        }
 
         // Mood selection (now supports multiple)
         document.querySelectorAll('.mood-btn').forEach(btn => {
