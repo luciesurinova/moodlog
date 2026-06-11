@@ -7,8 +7,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="moodlog">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%239db3d4' width='180' height='180'/><text x='50%' y='50%' font-size='60' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='central' font-family='system-ui'>📊</text></svg>">
-    <link rel="manifest" href="data:application/json,{\"name\":\"moodlog\",\"short_name\":\"moodlog\",\"description\":\"Track your mood, understand your patterns\",\"start_url\":\"./\",\"display\":\"standalone\",\"background_color\":\"#eef2f9\",\"theme_color\":\"#9db3d4\",\"scope\":\"/\",\"icons\":[{\"src\":\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%239db3d4' width='192' height='192' rx='45'/><text x='50%' y='50%' font-size='80' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='central' font-family='system-ui'>📊</text></svg>\",\"sizes\":\"192x192\",\"type\":\"image/svg+xml\",\"purpose\":\"any\"}]}">
     <title>moodlog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -702,11 +700,6 @@
         let selectedMoods = [];
         let currentCalendarDate = new Date();
         let currentTheme = 'periwinkle';
-
-        // Register service worker for PWA
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('data:application/javascript,self.addEventListener("install",e=>self.skipWaiting());self.addEventListener("activate",e=>e.waitUntil(clients.claim()));').catch(() => {});
-        }
 
         // Initialize
         initializeThemeSelector();
